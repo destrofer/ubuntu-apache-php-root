@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 ENV SERVER_DOMAIN=localhost
 ENV SERVER_ADMIN_EMAIL=webmaster@localhost
-RUN apt-get update && apt-get install -y ssl-cert apache2 php7.0-cgi libapache2-mod-fastcgi php-fpm
+RUN apt-get update && apt-get install -y cron ssl-cert apache2 php7.0-cgi libapache2-mod-fastcgi php-fpm
 RUN a2enmod actions fastcgi alias rewrite ssl
 RUN a2ensite default-ssl
 RUN mkdir -p /cert/

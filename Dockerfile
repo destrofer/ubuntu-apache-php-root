@@ -1,6 +1,7 @@
 FROM ubuntu:16.04
 ENV SERVER_DOMAIN=localhost
 ENV SERVER_ADMIN_EMAIL=webmaster@localhost
+ENV PHP_FPM_IDLE_TIMEOUT=30
 RUN apt-get update && apt-get install -y cron ssl-cert apache2 php7.0-cgi libapache2-mod-fastcgi php-fpm
 RUN a2enmod actions fastcgi alias rewrite ssl
 RUN a2ensite default-ssl
